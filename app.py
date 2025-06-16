@@ -38,11 +38,11 @@ def extract_material(detail):
     if not isinstance(detail, str):
         return None
     detail = detail.upper()
-    if "TITAN" in detail or "TITA" in detail:
-        return "TITANIUM"
-    elif "METAL" in detail or detail.endswith(("M", "ME", "META")):
+    if "TITAN" in detail or "TITA" in detail or "TIT" in detail:
+        return "PRECIOUS"
+    elif "METAL" in detail or detail.endswith(("M", "ME", "META")) or "MET" in detail:
         return "METAL"
-    elif "SHELL" in detail or "PLASTIC" in detail:
+    elif "SHELL" in detail or "SH" in detail or "SHE" in detail or "SHEL" in detail:
         return "PLASTICS"
     return None
 
@@ -61,7 +61,7 @@ def extract_shape(detail):
         "Butterfly": ["BUTTERFLY", "BUTTR", "BUTT"], "Aviator": ["AVIATOR", "AVI"],
         "Pillow": ["PILLOW", "PILL"], "Square": ["SQUARE", "SQR", "SQ"],
         "Pilot": ["PILOT", "PIL"], "Oval": ["OVAL", "OV", "OVA"],
-        "Rectangle": ["RECTANGLE", "RECTANGL", "RECT", "REC", "RE"],
+        "Rectangle": ["RECTANGLE", "RECTANGL", "RECT", "REC"],
         "Irregular": ["IRREGULAR", "IRREGU", "IRR", "IRREG", "IRRE"]
     }
     for shape, keywords in shape_map.items():
